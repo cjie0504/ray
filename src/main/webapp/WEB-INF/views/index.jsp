@@ -16,15 +16,47 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container px-5">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="index.jsp">Raymetrics</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownCompany" href="/company" role="button" data-bs-toggle="dropdown" aria-expanded="false">Company</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownCompany">
+                            <li><a class="dropdown-item" href="/corporation">RAYMETRICS Corporation</a></li>
+                            <li><a class="dropdown-item" href="/managementPhilosophy">Management Philosophy</a></li>
+                            <li><a class="dropdown-item" href="/history">History</a></li>
+                            <li><a class="dropdown-item" href="/organization">Organization</a></li>
+                            <li><a class="dropdown-item" href="/news">News</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownRAndD" href="/rAndD" role="button" data-bs-toggle="dropdown" aria-expanded="false">R & D</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownRAndD">
+                            <li><a class="dropdown-item" href="/plasticScintillator">3D plastic scintillator</a></li>
+                            <li><a class="dropdown-item" href="/radiationInstruments">AI-assisted radiation instruments</a></li>
+                            <li><a class="dropdown-item" href="/radiotherapyDosimetry">3D Radiotherapy Dosimetry</a></li>
+                            <li><a class="dropdown-item" href="/patent">Patent</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownProduct" href="/product" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownProduct">
+                            <li><a class="dropdown-item" href="/customPrintedScintillator">3D custom Printed scintillator</a></li>
+                            <li><a class="dropdown-item" href="/radiationDetector">Radiation Detector</a></li>
+                            <li><a class="dropdown-item" href="/patientTailored">Patient-tailored 3D radiotherapy dose measurement solution</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownContactUs" href="/contactUs" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownContactUs">
+                            <li><a class="dropdown-item" href="/contactUs">Contact Us</a></li>
+                            <li><a class="dropdown-item" href="/inquiryBoard">Inquiry Board</a></li>
+                        </ul>
+                    </li>
+                    <%--<li class="nav-item"><a class="nav-link" href="/rAndD">R & D</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/product">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contactUs">Contact us</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
@@ -38,7 +70,7 @@
                             <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
                             <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
                         </ul>
-                    </li>
+                    </li>--%>
                 </ul>
             </div>
         </div>
