@@ -8,16 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     //메인페이지
-    @GetMapping(value = "/test")
-    public String test(){
-        
-        return "test";
-    }
-
-
     @RequestMapping(value= "/")
-    public String index() {
-        return "index";
+    public String main() {
+
+        return "about";
     }
 
 }
