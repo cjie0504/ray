@@ -12,7 +12,7 @@ public class ContactUsController {
         return "/company/blog";
     }
 
-    @RequestMapping(value= "/radiationDetector", method = RequestMethod.GET)
+    @RequestMapping(value= "/inquiry", method = RequestMethod.GET)
     public String inquiry() {
         return "/company/blog";
     }

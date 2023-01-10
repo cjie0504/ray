@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-2">
                 <div class="header__logo">
-                    <a href="/"><img src="/resources/img/logo.png" alt=""></a>
+                    <a href="/"><img src="/resources/img/raymetricsLogo.png" alt="" style="max-width: 150%;"></a>
                 </div>
             </div>
             <div class="col-lg-10">
