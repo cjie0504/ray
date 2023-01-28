@@ -9,12 +9,12 @@ public class CompanyController {
 
     @RequestMapping(value= "/company", method = RequestMethod.GET)
     public String company() {
-        return "/company/blog";
+        return "/company/services";
     }
 
     @RequestMapping(value= "/corportaion", method = RequestMethod.GET)
     public String corporation() {
-        return "/company/blog";
+        return "/company/services";
     }
 
     @RequestMapping(value= "/managementPhilosophy", method = RequestMethod.GET)
