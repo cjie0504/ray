@@ -883,7 +883,7 @@ ol {
   Footer
 -----------------------*/
 .footer {
-  background: #0a0119;
+  background-color: transparent;
 }
 
 .footer__top {
