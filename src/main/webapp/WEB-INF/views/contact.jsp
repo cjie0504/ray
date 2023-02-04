@@ -74,7 +74,7 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="/resources/img/breadcrumb-bg.jpg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="/resources/background/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

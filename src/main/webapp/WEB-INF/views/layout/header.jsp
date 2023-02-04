@@ -1,12 +1,14 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
 <head>
     <%@ page language="java" contentType="text/html; charset=utf-8"
              pageEncoding="utf-8"%>
-    <meta charset="UTF-8">
     <meta name="description" content="Videograph Template">
     <meta name="keywords" content="Videograph, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Videograph | Template</title>
+    <title>Raymetrics</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -21,15 +23,21 @@
     <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
 </head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
 <header class="header">
-    <div class="container">
+    <div class="container" style="margin-left: 10%">
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-3">
                 <div class="header__logo">
                     <a href="/"><img src="/resources/img/raymetricsLogo.png" alt=""></a>
                 </div>
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-9">
                 <div class="header__nav__option">
                     <nav class="header__nav__menu mobile-menu">
                         <ul>

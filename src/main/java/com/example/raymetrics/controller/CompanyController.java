@@ -9,26 +9,26 @@ public class CompanyController {
 
     @RequestMapping(value= "/company", method = RequestMethod.GET)
     public String company() {
-        return "/company/services";
+        return "/company/main";
     }
 
     @RequestMapping(value= "/corportaion", method = RequestMethod.GET)
     public String corporation() {
-        return "/company/services";
+        return "/company/main";
     }
 
     @RequestMapping(value= "/managementPhilosophy", method = RequestMethod.GET)
     public String managementPhilosophy() {
-        return "/company/blog";
+        return "/company/philosophy";
     }
 
     @RequestMapping(value= "/history", method = RequestMethod.GET)
     public String history() {
-        return "/company/blog";
+        return "/company/history";
     }
     @RequestMapping(value= "/organization", method = RequestMethod.GET)
     public String organization() {
-        return "/company/blog";
+        return "/company/organization";
     }
     @RequestMapping(value= "/news", method = RequestMethod.GET)
     public String news() {

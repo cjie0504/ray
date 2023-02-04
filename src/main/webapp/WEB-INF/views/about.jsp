@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
+`
     <!-- Css Styles -->
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css">
@@ -85,7 +85,7 @@
                                 <%--                                <li><a href="index.jsp">Home</a></li>--%>
                                 <%--                                <li><a href="about.jsp">About</a></li>--%>
                                 <%--                                <li><a href="portfolio.jsp">Portfolio</a></li>--%>
-                                <%--                                <li class="active"><a href="./services.jsp">Services</a></li>--%>
+                                <%--                                <li class="active"><a href="./main.jsp">Services</a></li>--%>
                                 <%--                                <li><a href="#">Pages</a>--%>
                                 <%--                                    <ul class="dropdown">--%>
                                 <%--                                        <li><a href="about.jsp">About</a></li>--%>
@@ -113,7 +113,7 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="/resources/img/breadcrumb-bg.jpg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="/resources/background/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

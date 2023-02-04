@@ -46,7 +46,7 @@
                                 <li><a href="layout/index.jsp">Home</a></li>
                                 <li><a href="about.jsp">About</a></li>
                                 <li><a href="portfolio.jsp">Portfolio</a></li>
-                                <li class="active"><a href="company/services.jsp">Services</a></li>
+                                <li class="active"><a href="company/main.jsp">Services</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="about.jsp">About</a></li>

@@ -46,7 +46,7 @@
                                 <li><a href="layout/index.jsp">Home</a></li>
                                 <li><a href="about.jsp">About</a></li>
                                 <li class="active"><a href="./portfolio.jsp">Portfolio</a></li>
-                                <li><a href="company/services.jsp">Services</a></li>
+                                <li><a href="company/main.jsp">Services</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="about.jsp">About</a></li>
@@ -74,7 +74,7 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option spad set-bg" data-setbg="/resources/img/breadcrumb-bg.jpg">
+    <div class="breadcrumb-option spad set-bg" data-setbg="/resources/background/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

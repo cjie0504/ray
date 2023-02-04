@@ -73,10 +73,10 @@ h6 {
 p {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
-  color: #adadad;
+  color: #706f6f;
   font-weight: 400;
-  line-height: 26px;
-  margin: 0 0 15px 0;
+  line-height: 20px;
+  margin: 0 0 0 0;
 }
 
 img {
@@ -125,7 +125,7 @@ ol {
   margin-bottom: 6px;
 }
 .section-title h2 {
-  color: #ffffff;
+  color: #0C3975;
   font-weight: 700;
   text-transform: uppercase;
   position: relative;
@@ -137,7 +137,7 @@ ol {
   bottom: 0;
   height: 5px;
   width: 70px;
-  background: ##0C3975;
+  background: #0C3975;
   content: "";
 }
 
@@ -145,6 +145,7 @@ ol {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
+  margin-bottom: 10px;
 }
 
 .spad {
@@ -236,7 +237,7 @@ ol {
   top: 0;
   left: 0;
   z-index: 999999;
-  background: #000;
+  background: #ffffff;
 }
 
 .loader {
@@ -311,7 +312,7 @@ ol {
 
 .header__nav__option {
   text-align: center;
-  padding: 45px 0px;
+  padding: 60px 0px;
 }
 
 .header__nav__menu {
@@ -836,9 +837,9 @@ ol {
 }
 .menuSubTitle h2{
   color: white;
-  font-size: 45px;
+  font-size: 40px;
   font-family: "Montserrat", sans-serif;
-  margin-top: 0.8em;
+  margin-top: 1em;
 }
 
 .callto__text h2 {
@@ -858,6 +859,7 @@ ol {
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
   margin-left: 50%;
+  line-height: 2em
 }
 .callto__text span {
   font-size: 18px;
@@ -1016,7 +1018,7 @@ ol {
   Breadcrumb
 -----------------------*/
 .breadcrumb-option {
-  padding-top: 180px;
+  padding-top: 150px;
 }
 
 .breadcrumb__text h2 {
@@ -1053,8 +1055,8 @@ ol {
   About
 -----------------------*/
 .about {
-  background: #100028;
-  padding-bottom: 150px;
+  background: #FFFFFF;
+  padding-bottom: 50px;
 }
 
 .about__pic__item {
@@ -1063,7 +1065,11 @@ ol {
   margin-bottom: 20px;
 }
 .about__pic__item.about__pic__item--large {
-  height: 490px;
+  max-width: 700px;
+  background-size: contain;
+}
+.about__pic__item.organization {
+  background-size: contain;
 }
 
 .about__text {
@@ -1179,7 +1185,12 @@ ol {
   margin-bottom: 18px;
 }
 .services__item p {
-  margin-bottom: 0;
+  font-size: 18px;
+  color: #0C3975;
+  text-transform: uppercase;
+  margin-bottom: 55px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
 }
 
 .services__item__icon {
@@ -1807,6 +1818,10 @@ ol {
   border-color: #e1e1e1;
 }
 
+#subTitle {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 @media only screen and (min-width: 1200px) {
   .container {
@@ -2193,3 +2208,99 @@ ol {
     padding: 30px 40px 35px 35px;
   }
 }
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #00425A;
+  top: 0;
+  bottom: 0;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline {
+  position: relative;
+  background-color: inherit;
+}
+
+/* The circles on the timeline */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: #00425A;
+  border: 5px solid #BFDB38;
+  top: 15px;
+  z-index: 1;
+}
+
+
+/* Place the container to the right */
+.right {
+  padding: 30px 30px 20px 40px;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+ .philosophy__text p{
+   font-size: 20px;
+   color: #0C3975;
+   text-transform: uppercase;
+   margin-bottom: 55px;
+   font-weight: bold;
+   font-family: "Montserrat", sans-serif;
+   line-height: 2em
+ }
