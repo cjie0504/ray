@@ -1060,8 +1060,7 @@ ol {
 }
 
 .about__pic__item {
-  height: 235px;
-  margin-right: -10px;
+  height: 200px;
   margin-bottom: 20px;
 }
 .about__pic__item.about__pic__item--large {
@@ -2304,3 +2303,54 @@ ol {
    font-family: "Montserrat", sans-serif;
    line-height: 2em
  }
+
+.productP{
+  font-size: 20px;
+  color: #0C3975;
+  font-weight:900;
+  font-family: "Montserrat", sans-serif;
+  line-height: 2em;
+}
+.productP2{
+  font-size: 20px;
+  color: #000000;
+  font-weight:900;
+  font-family: "Montserrat", sans-serif;
+  line-height: 2em;
+  font-style: oblique;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.productList {
+  font-size: 18px;
+  color: #000000;
+  font-weight:700;
+  font-family: "Montserrat", sans-serif;
+  line-height: 2em;
+  margin-left:80px;
+}
+.productText{
+  font-size: 18px;
+  color: #000000;
+  font-weight:700;
+  font-family: "Montserrat", sans-serif;
+  line-height: 2em;
+}
+.productList2 {
+  font-size: 18px;
+  color: #000000;
+  font-weight:300;
+  font-family: "Montserrat", sans-serif;
+  line-height: 2em;
+  margin-left:50px;
+}
+
+.rAndD__pic__item.rAndD__pic__item--large {
+  max-width: 900px;
+  background-size: contain;
+}
+.rAndD__pic__item {
+  height: 300px;
+  margin-bottom: 20px;
+}

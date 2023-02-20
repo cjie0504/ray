@@ -9,12 +9,12 @@ public class ProductController {
 
     @RequestMapping(value= "/customPrinted", method = RequestMethod.GET)
     public String customPrinted() {
-        return "/company/blog";
+        return "/product/3dPlasticScintillator";
     }
 
     @RequestMapping(value= "/radiationDetector", method = RequestMethod.GET)
     public String radiationDetector() {
-        return "/company/blog";
+        return "/product/3dPlasticScintillator";
     }
 
     @RequestMapping(value= "/patientTailored", method = RequestMethod.GET)

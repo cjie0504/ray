@@ -8,26 +8,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RAndDController {
     @RequestMapping(value = "/RAndD", method = RequestMethod.GET)
     public String rAndD(){
-        return "/company/blog";
+        return "/rAndD/3dPlasticScintillator";
     }
 
     @RequestMapping(value = "/plasticScintillator", method = RequestMethod.GET)
     public String plasticScintillator(){
-        return "/company/blog";
+        return "/rAndD/3dPlasticScintillator";
     }
 
     @RequestMapping(value = "/aiAssisted", method = RequestMethod.GET)
     public String aiAssisted(){
-        return "/company/blog";
+        return "/rAndD/aiAssistedRadiationInstrument";
     }
 
     @RequestMapping(value = "/radiotherapyDosimetry", method = RequestMethod.GET)
     public String radiotherapyDosimetry(){
-        return "/company/blog";
+        return "/rAndD/3dRadiotherapyDosimetry";
     }
 
     @RequestMapping(value = "/patent", method = RequestMethod.GET)
     public String patent(){
-        return "/company/blog";
+        return "/rAndD/patent";
     }
 }
