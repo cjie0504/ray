@@ -9,7 +9,7 @@ public class ContactUsController {
 
     @RequestMapping(value= "/contactUs", method = RequestMethod.GET)
     public String contactUs() {
-        return "/company/blog";
+        return "/contactUs/contact";
     }
 
     @RequestMapping(value= "/inquiry", method = RequestMethod.GET)

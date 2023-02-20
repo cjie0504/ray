@@ -55,7 +55,7 @@
                                         <li><a href="./blog-details.jsp">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.jsp">Contact</a></li>
+                                <li><a href="contactUs/contact.jsp">Contact</a></li>
                             </ul>
                         </nav>
                         <div class="header__nav__social">

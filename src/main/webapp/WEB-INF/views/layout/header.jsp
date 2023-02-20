@@ -13,7 +13,8 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/resources/img/favicon/favicon.ico" />
     <!-- Css Styles -->
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css">
@@ -58,14 +59,14 @@
                                     <li><a href="/patent">- Patent</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/product">Product</a>
+                            <li><a href="/customPrinted">Product</a>
                                 <ul class="dropdown">
                                     <li><a href="/customPrinted">- 3D custom printed scintillator</a></li>
                                     <li><a href="/radiationDetector">- Radiation Detector</a></li>
                                     <li><a href="/patientTailored">- Patient-tailored 3D radiotherapy dose measurement solution</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/ContactUs">Contact us</a>
+                            <li><a href="/contactUs">Contact us</a>
                                 <ul class="dropdown">
                                     <li><a href="/contactUs">- Contact Us</a></li>
                                     <li><a href="/inquiry">- Inquiry Board</a></li>

@@ -48,7 +48,7 @@
     <title>MyGenomeBox</title>
 
     <!-- Favicon -->
-
+    favicon
     <link rel="shortcut icon" href="https://d14rou3pdf9zu2.cloudfront.net/kr/common/meta.png">
     <link rel="apple-touch-icon" href="https://d14rou3pdf9zu2.cloudfront.net/kr/common/meta.png">
     <link rel="apple-touch-icon-precomposed" href="https://d14rou3pdf9zu2.cloudfront.net/kr/common/meta.png">

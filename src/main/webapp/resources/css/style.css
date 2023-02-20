@@ -1725,7 +1725,7 @@ ol {
 .contact__widget__item__icon {
   height: 70px;
   width: 70px;
-  border: 1px solid rgba(225, 225, 225, 0.5);
+  border: 1px solid #0a0119;
   line-height: 80px;
   text-align: center;
   border-radius: 50%;
@@ -1734,7 +1734,7 @@ ol {
 }
 .contact__widget__item__icon i {
   font-size: 30px;
-  color: #ffffff;
+  color: #0a0119;
 }
 
 .contact__widget__item__text {
@@ -1743,7 +1743,7 @@ ol {
 }
 .contact__widget__item__text h4 {
   font-size: 22px;
-  color: #ffffff;
+  color: #0a0119;
   font-weight: 700;
   margin-bottom: 10px;
 }

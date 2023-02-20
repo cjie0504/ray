@@ -14,12 +14,12 @@ public class ProductController {
 
     @RequestMapping(value= "/radiationDetector", method = RequestMethod.GET)
     public String radiationDetector() {
-        return "/product/3dPlasticScintillator";
+        return "/product/radiationDetector";
     }
 
     @RequestMapping(value= "/patientTailored", method = RequestMethod.GET)
     public String patientTailored() {
-        return "/company/blog";
+        return "/product/patientTailored";
     }
 
 }
