@@ -18,7 +18,7 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 15%;">
+<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 18%;">
     <div class="container">
         <div class="row">
             <div class="menuSubTitle col-lg-12">
@@ -43,20 +43,36 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="about__pic__item organization set-bg"
-                                         data-setbg="/resources/img/company/profileIcon.png"></div>
+                                         data-setbg="/resources/img/company/person1.PNG"></div>
                                     <div style="margin-left: 0px; margin-top: 50px;">
                                         <p><b>성명</b> 김용현</p>
                                         <hr>
                                         <p><b>직위</b> 대표</p>
+                                        <hr>
+                                        한양대 원자력공학과 박사
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3" >
                                     <div class="about__pic__item organization set-bg"
-                                         data-setbg="/resources/img/company/profileIcon.png"></div>
+                                         data-setbg="/resources/img/company/person2.PNG"></div>
                                     <div style="margin-left: 0px; margin-top: 50px;">
                                         <p><b>성명</b> 김용균</p>
                                         <hr>
                                         <p><b>직위</b> CTO</p>
+                                        <hr>
+                                        한양대학교 교수<br>
+                                        서울대 물리학 박사
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                    <div class="about__pic__item organization set-bg"
+                                         data-setbg="/resources/img/company/person3.PNG"></div>
+                                    <div style="margin-left: 0px; margin-top: 50px;">
+                                        <p><b>성명</b> 양한철</p>
+                                        <hr>
+                                        <p><b>직위</b> Director</p>
+                                        <hr>
+                                        한양대 원자력공학 학사
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3">
@@ -65,16 +81,8 @@
                                     <div style="margin-left: 0px; margin-top: 50px;">
                                         <p><b>성명</b> 이상민</p>
                                         <hr>
-                                        <p><b>직위</b> R&D director</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <div class="about__pic__item organization set-bg"
-                                         data-setbg="/resources/img/company/profileIcon.png"></div>
-                                    <div style="margin-left: 0px; margin-top: 50px;">
-                                        <p><b>성명</b> 양한철</p>
+                                        <p><b>직위</b> 감사</p>
                                         <hr>
-                                        <p><b>직위</b> Senior Researcher</p>
                                     </div>
                                 </div>
                             </div>

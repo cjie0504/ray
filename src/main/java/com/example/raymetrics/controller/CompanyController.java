@@ -32,6 +32,6 @@ public class CompanyController {
     }
     @RequestMapping(value= "/news", method = RequestMethod.GET)
     public String news() {
-        return "/company/blog";
+        return "/company/news";
     }
 }

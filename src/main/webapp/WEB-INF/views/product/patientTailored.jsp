@@ -18,7 +18,7 @@
     </div>
 </div>
 <!-- Breadcrumb End -->
-<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 15%;">
+<div class="set-bg" data-setbg="/resources/img/product/productSubHeaderImg.jpg" style="height: 18%;">
     <div class="container">
         <div class="row">
             <div class="menuSubTitle col-lg-12">
@@ -34,7 +34,7 @@
     <div class="container" style="max-width: 1500px;">
         <div class="row">
             <div class="col-lg-6">
-                <div class="about__text">
+                <div class="about__text" style="margin-top: 50px;">
                     <div class="section-title" style="margin-bottom: 20px;">
                         <p class="productP">환자 맞춤형 암종양 치료선량 측정 시스템</p>
                     </div>
@@ -46,6 +46,44 @@
                         </ul>
                     </div>
 
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="about__pic" style="">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="about__pic__item set-bg"  >
+                                <img src="/resources/img/product/3D_img1.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="about__pic__item set-bg"  >
+                                <img src="/resources/img/product/3D_img2.png" alt="" style="height: 250px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-lg-5 offset-lg-2">
+                <div class="about__pic" style="">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="about__pic__item set-bg" data-setbg="/resources/img/product/3D_img4.png" style="height: 400px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 ">
+                <div class="about__pic" style="">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="about__pic__item set-bg" data-setbg="/resources/img/product/3D_img3.png" style="height: 350px"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

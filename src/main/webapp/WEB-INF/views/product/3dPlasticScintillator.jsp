@@ -18,7 +18,7 @@
     </div>
 </div>
 <!-- Breadcrumb End -->
-<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 15%;">
+<div class="set-bg" data-setbg="/resources/img/product/productSubHeaderImg.jpg" style="height: 18%;">
     <div class="container">
         <div class="row">
             <div class="menuSubTitle col-lg-12">
@@ -36,7 +36,7 @@
             <div class="col-lg-6">
                 <div class="about__text">
                     <div class="section-title" style="margin-bottom: 20px;">
-                        <p class="productP">고객의 요구사항대로 형상 맞추제작이 가능한 3D 프린팅플라스틱 섬광체</p>
+                        <p class="productP">고객의 요구사항대로 형상 맞춤제작이 가능한 3D 프린팅플라스틱 섬광체</p>
                     </div>
                     <div class="row">
                         <ul class="productList">
@@ -66,7 +66,14 @@
                     <div class="about__pic" style="">
                         <div class="row">
                             <div class="col-lg-8">
-                                <div class="about__pic__item set-bg" data-setbg="/resources/img/product/productImg2.PNG" style="height: 450px"></div>
+                                <div class="about__pic__item set-bg" data-setbg="/resources/img/product/specificationImage.png" style="height: 350px"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="about__pic__item set-bg"  >
+                                    <img src="/resources/img/product/specificationTable.png" alt="" style="height: 250px;">
+                                </div>
                             </div>
                         </div>
                     </div>

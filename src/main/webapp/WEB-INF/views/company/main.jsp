@@ -18,7 +18,7 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 15%;">
+<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 18%;">
     <div class="container">
         <div class="row">
             <div class="menuSubTitle col-lg-12">

@@ -10,38 +10,38 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="breadcrumb__text">
-                    <h2>R & D</h2>
+                    <h2>Contact Us</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- Breadcrumb End -->
-<div class="set-bg" data-setbg="/resources/img/rAndD/rAndDSubHeaderImg.jpg" style="height: 18%;">
+<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 18%;">
     <div class="container">
         <div class="row">
             <div class="menuSubTitle col-lg-12">
                 <div>
-                    <h2 style="color: white;">Patent</h2>
+                    <h2 style="color: white;">Inquiry Board</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Breadcrumb Begin -->
+    <!-- Breadcrumb Begin -->
 
-<!-- Breadcrumb End -->
+    <!-- Breadcrumb End -->
 
-<!-- Contact Widget Section Begin -->
+    <!-- Contact Widget Section Begin -->
 <section class="spad">
     <div class="container" style="height: 500px;">
-        <div class="row">
-            <div class="col-lg-12" style="text-align: center;margin-top: 10%;">
-                <img src="/resources/img/background/img_coming.png">
-            </div>
+    <div class="row">
+        <div class="col-lg-12" style="text-align: center;margin-top: 10%;">
+            <img src="/resources/img/background/img_coming.png">
         </div>
     </div>
+</div>
 </section>
 
 

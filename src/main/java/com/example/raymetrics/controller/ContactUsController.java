@@ -14,7 +14,7 @@ public class ContactUsController {
 
     @RequestMapping(value= "/inquiry", method = RequestMethod.GET)
     public String inquiry() {
-        return "/company/blog";
+        return "/contactUs/inquiry";
     }
 
 }

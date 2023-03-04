@@ -18,7 +18,7 @@
     </div>
 </div>
 <!-- Breadcrumb End -->
-<div class="set-bg" data-setbg="/resources/img/company/subHeaderImg.jpg" style="height: 15%;">
+<div class="set-bg" data-setbg="/resources/img/product/productSubHeaderImg.jpg" style="height: 18%;">
     <div class="container">
         <div class="row">
             <div class="menuSubTitle col-lg-12">
@@ -85,7 +85,7 @@
                         <div class="about__pic">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="about__pic__item about__pic__item--large set-bg" data-setbg="/resources/img/product/radiationDetector2.PNG" style="height: 300px;"></div>
+                                    <div class="about__pic__item about__pic__item--large set-bg" data-setbg="/resources/img/product/radiationDetector2.PNG" style="height: 400px;"></div>
                                 </div>
                             </div>
                         </div>
