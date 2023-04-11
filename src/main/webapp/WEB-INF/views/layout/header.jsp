@@ -56,7 +56,7 @@
                                     <li><a href="/plasticScintillator">- 3D plastic scintillator</a></li>
                                     <li><a href="/aiAssisted">- AI-assisted radiation Instruments</a></li>
                                     <li><a href="/radiotherapyDosimetry">- 3D Radiotherapy Dosimetry</a></li>
-                                    <li><a href="/patent">- Patent</a></li>
+                                   <%--<li><a href="/patent">- Patent</a></li>--%>
                                 </ul>
                             </li>
                             <li><a href="/customPrinted">Product</a>
