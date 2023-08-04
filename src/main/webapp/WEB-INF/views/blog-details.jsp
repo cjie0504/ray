@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Videograph Template">
-    <meta name="keywords" content="Videograph, unica, creative, html">
+    <meta name="description" content="차세대 방사선 계측기 솔루션 기업.">
+    <meta name="keywords" content="raymetrics, 레이메트릭스, 섬광체, 계측기 ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Videograph | Template</title>
