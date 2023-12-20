@@ -48,6 +48,7 @@
 <!--    footer start-->
 <jsp:include page="../layout/footer.jsp"></jsp:include>
 <!-- Js Plugins -->
+<script type="text/javascript" src="../resources/static/smartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script src="/resources/js/jquery-3.3.1.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/jquery.magnific-popup.min.js"></script>
