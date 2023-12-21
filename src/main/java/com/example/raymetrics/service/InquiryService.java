@@ -9,10 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -45,7 +42,7 @@ public class InquiryService {
                         inquiryReply -> inquiryReply.setWriter("reply글쓴이")
                 );
             }
-            result.add(InquiryResDTO.of(inquiry,"inquiry글쓴이"));
+            result.add(InquiryResDTO.of(inquiry));
         });
         return inquiryList;
     }
@@ -54,7 +51,20 @@ public class InquiryService {
     public InquiryResDTO getOne(int id){
         Optional<Inquiry> inquiry = inquiryRepository.findById(id);
         if(inquiry.isPresent()){
-            return InquiryResDTO.of(inquiry.get(),"inquiry글쓴이");
+            return InquiryResDTO.of(inquiry.get());
+        }else {
+            return null;
+        }
+    }
+    @Transactional(readOnly = true)
+    public InquiryResDTO checkWriter(Map<String,Object> param){
+        int inquiryNo = Integer.parseInt(param.get("inquiryNo").toString());
+        String name = param.get("name").toString();
+        String pw = param.get("pw").toString();
+
+        Optional<Inquiry> inquiry = inquiryRepository.findTop1ByInquiryNoAndNameAndPw(inquiryNo,name,pw);
+        if(inquiry.isPresent()){
+            return InquiryResDTO.of(inquiry.get());
         }else {
             return null;
         }
@@ -118,4 +128,5 @@ public class InquiryService {
         }
         return false;
     }
+
 }

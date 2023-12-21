@@ -34,8 +34,8 @@ public class Inquiry extends AuditingAt {
     public Inquiry(HashMap<String, Object> param){
         this.title = String.valueOf(param.get("title"));
         this.email = String.valueOf(param.get("email"));
-        this.name = String.valueOf(param.get("writer"));
-        this.phone = String.valueOf(param.get("email"));
+        this.name = String.valueOf(param.get("name"));
+        this.phone = String.valueOf(param.get("phone"));
         this.company = String.valueOf(param.get("company"));
         this.pw = String.valueOf(param.get("pw"));
         this.contents = String.valueOf(param.get("smartEditor"));
