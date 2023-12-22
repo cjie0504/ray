@@ -20,6 +20,7 @@ public class InquiryResDTO {
     private String name;
     private String phone;
     private String company;
+    private String token;
     private Timestamp regDt;
     private List<InquiryReply> replies;
 
@@ -33,6 +34,7 @@ public class InquiryResDTO {
                 inquiry.getName(),
                 inquiry.getPhone(),
                 inquiry.getCompany(),
+                inquiry.getToken(),
                 inquiry.getRegDt(),
                 inquiry.getReplies()
         );

@@ -1,6 +1,8 @@
 package com.example.raymetrics.controller;
 
+import com.example.raymetrics.entity.Inquiry;
 import com.example.raymetrics.model.InquiryResDTO;
+import com.example.raymetrics.service.FileUploadService;
 import com.example.raymetrics.service.InquiryService;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
@@ -18,11 +20,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.SecureRandom;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
 public class ContactUsController {
     private final InquiryService inquiryService;
+    private final FileUploadService fileUploadService;
 
     @RequestMapping(value= "/contactUs", method = RequestMethod.GET)
     public String contactUs() {
@@ -30,7 +35,9 @@ public class ContactUsController {
     }
 
     @RequestMapping(value= "/inquiry", method = RequestMethod.GET)
-    public String inquiry() {
+    public String inquiry(Model model) {
+        List<InquiryResDTO> inquiryList = inquiryService.getList();
+        model.addAttribute("INQUIRY_LIST", inquiryList);
         return "/contactUs/inquiry";
     }
 
@@ -54,7 +61,7 @@ public class ContactUsController {
     @RequestMapping(value= "/contactUs/inquiryRegister/upload", method = RequestMethod.POST)
     public void smarteditorMultiImageUpload(HttpServletRequest request, HttpServletResponse response) {
 
-        inquiryService.uploadImg(request,response);
+        fileUploadService.uploadImg(request,response);
 
     }
 
@@ -64,33 +71,48 @@ public class ContactUsController {
      * @return
      */
     @PostMapping(value = "/contactUs/inquiry")
-    public String regist(@RequestParam HashMap<String, Object> paramMap, RedirectAttributes attributes){
-        int inquiry_no = inquiryService.regist(paramMap);
-        attributes.addAttribute("WRITER","Y");
+    public String regist(@RequestParam HashMap<String, Object> paramMap, RedirectAttributes attributes) throws IOException {
+        Inquiry inquiry = inquiryService.regist(paramMap);
+        fileUploadService.uploadImgToCloud(inquiry);
 
-        return "redirect:/inquiry/detail/"+inquiry_no;
+        return "redirect:/inquiry/detail/"+inquiry.getInquiryNo();
     }
+
+    /**
+     * 패스워드 체크
+     * @param paramMap
+     * @param model
+     * @param attributes
+     * @return
+     */
     @RequestMapping(value= "/inquiry/checkPw", method = RequestMethod.POST)
     public String inquiryPwCheck( @RequestParam HashMap<String, Object> paramMap ,Model model, RedirectAttributes attributes) {
 
         InquiryResDTO inquiry = inquiryService.checkWriter(paramMap);
 
         if(inquiry!=null){
-            attributes.addAttribute("WRITER","Y");
+            attributes.addAttribute("TOKEN",inquiry.getToken());
+
             return "redirect:/inquiry/detail/"+inquiry.getInquiryNo();
         }else {
             return "redirect:/inquiry";
         }
     }
 
+    /**
+     * 상세페이지
+     * @param inquiryNo
+     * @param model
+     * @return
+     */
     @RequestMapping(value= "/inquiry/detail/{inquiryNo}", method = RequestMethod.GET)
-    public String inquiry(@PathVariable("inquiryNo") int inquiryNo, Model model) {
+    public String inquiry(@PathVariable("inquiryNo") int inquiryNo, Model model, @RequestParam Map<String,Object> param) {
 
         InquiryResDTO inquiry = inquiryService.getOne(inquiryNo);
         model.addAttribute("INQUIRY",inquiry);
 
-        if(model.getAttribute("WRITER")!=null
-                && "Y".equals(model.getAttribute("WRITER"))){
+        if(param.get("TOKEN")!=null
+                && (inquiry.getToken()!=null && inquiry.getToken().equals(param.get("TOKEN")))){
             return "/contactUs/inquiryDetail";
         }else {
             return "/contactUs/inquiryCheckPw";
@@ -104,7 +126,6 @@ public class ContactUsController {
         InputStream fileContent = new FileInputStream("C:\\Users\\Kihong\\IdeaProjects\\Raymetrics\\src\\main\\webapp\\resources\\uploadImg\\test.jpg");
         Blob blob = bucket.create("test", fileContent, "image/jpg")
                 ;
-
     }
     public static String generateRandomFolderName() {
         // 안전한 난수 생성을 위한 SecureRandom 인스턴스
