@@ -334,7 +334,7 @@
     	var tempFile,
     		sUploadURL;
     	
-    	sUploadURL= 'http://localhost:8080/contactUs/inquiryRegister/upload'; 	//upload URL
+    	sUploadURL= window.location.origin+'/contactUs/inquiryRegister/upload'; 	//upload URL
     	
     	//파일을 하나씩 보내고, 결과를 받음.
     	for(var j=0, k=0; j < nImageInfoCnt; j++) {
@@ -396,7 +396,7 @@
  		}catch(e){}
  		
  		aResultleng = aResult.length;
-    	aResult[aResultleng] = htTemp;
+    	aResult[aResultleng] = htTempㅇ;
     	
     	if(aResult.length == nImageFileCount){
     		setPhotoToEditor(aResult); 
