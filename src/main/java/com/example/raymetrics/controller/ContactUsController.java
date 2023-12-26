@@ -8,6 +8,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.firebase.cloud.StorageClient;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,9 +36,28 @@ public class ContactUsController {
     }
 
     @RequestMapping(value= "/inquiry", method = RequestMethod.GET)
-    public String inquiry(Model model) {
-        List<InquiryResDTO> inquiryList = inquiryService.getList();
+    public String inquiry(@RequestParam Map<String,Object> param, Model model) {
+        Page<InquiryResDTO> inquiryList = inquiryService.getList(param);
+
+
+        int pageBlock = 10;
+        int page = inquiryList.getNumber()+1;
+
+        // 현재 페이지 블록
+        int currentBlock = (int) Math.ceil((double) page / pageBlock);
+
+        // 페이지 블록 시작 페이지
+        int startPage = (currentBlock - 1) * pageBlock + 1;
+
+        // 페이지 블록 끝 페이지
+        int endPage = Math.min(startPage + pageBlock - 1, inquiryList.getTotalPages());
+
+
         model.addAttribute("INQUIRY_LIST", inquiryList);
+        model.addAttribute("START_PAGE", startPage);
+        model.addAttribute("END_PAGE", endPage);
+
+
         return "/contactUs/inquiry";
     }
 
@@ -75,7 +95,8 @@ public class ContactUsController {
         Inquiry inquiry = inquiryService.regist(paramMap);
         fileUploadService.uploadImgToCloud(inquiry);
 
-        return "redirect:/inquiry/detail/"+inquiry.getInquiryNo();
+//        return "redirect:/inquiry/detail/"+inquiry.getInquiryNo();
+        return "redirect:/inquiry";
     }
 
     /**

@@ -43,6 +43,7 @@ public class Inquiry extends AuditingAt {
         this.contents = String.valueOf(param.get("smartEditor"));
     }
 
+    //본인 확인을 위해 난수사용
     public void setToken(){
         // 안전한 난수 생성을 위한 SecureRandom 인스턴스
         SecureRandom secureRandom = new SecureRandom();
@@ -58,5 +59,10 @@ public class Inquiry extends AuditingAt {
         }
 
         this.token = folderNameBuilder.toString();
+    }
+
+    public Inquiry setContents(String contents){
+        this.contents = contents;
+        return this;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.raymetrics.service;
 
 import com.example.raymetrics.entity.Inquiry;
+import com.example.raymetrics.repository.InquiryRepository;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.firebase.cloud.StorageClient;
@@ -22,6 +23,7 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import static com.google.common.io.Files.getFileExtension;
 
@@ -30,6 +32,7 @@ import static com.google.common.io.Files.getFileExtension;
 public class FileUploadService {
     @Autowired
     private ResourceLoader resourceLoader;
+    private final InquiryRepository inquiryRepository;
 
     public boolean uploadImg(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -132,10 +135,18 @@ public class FileUploadService {
             InputStream fileContent = new FileInputStream(filePath);
             Blob blob = bucket.create(fileName, fileContent, contentType);
 
+            // 새로운 URL 생성
+            String newUrl = String.valueOf(blob.signUrl(36500, TimeUnit.DAYS));
+            // imgElement의 src 속성을 새 URL로 업데이트
+            imgElement.attr("src", newUrl);
+
             //해당파일 로컬에서 삭제
             fileDelete(filePath);
         }
 
+
+        String newContents = doc.toString();
+        inquiryRepository.save(inquiry.setContents(newContents));
     }
 
 

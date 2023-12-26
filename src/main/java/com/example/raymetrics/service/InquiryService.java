@@ -6,6 +6,8 @@ import com.example.raymetrics.model.InquiryResDTO;
 import com.example.raymetrics.repository.InquiryReplyRepository;
 import com.example.raymetrics.repository.InquiryRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,16 +26,25 @@ public class InquiryService {
         return inquiry;
     }
 
-
     @Transactional(readOnly = true)
-    public List<InquiryResDTO> getList() {
+    public Page<InquiryResDTO> getList(Map<String,Object> param) {
         List<InquiryResDTO> result = new ArrayList<>();
 
-        List<Inquiry> inquiryList = inquiryRepository.findAllByOrderByInquiryNoDesc();
-        inquiryList.forEach(inquiry -> {
-            result.add(InquiryResDTO.of(inquiry));
-        });
-        return result;
+        int page = Optional.ofNullable(param.get("page"))
+                .map(Object::toString)
+                .map(Integer::valueOf)
+                .orElse(0);
+        int size = 10;
+        PageRequest pageable = PageRequest.of(page, size);
+        Page<Inquiry> inquiryPage = inquiryRepository.findAllByOrderByInquiryNoDesc(pageable);
+
+        return inquiryPage.map(InquiryResDTO::of);
+
+//        List<Inquiry> inquiryList = inquiryRepository.findAllByOrderByInquiryNoDesc();
+//        inquiryList.forEach(inquiry -> {
+//            result.add(InquiryResDTO.of(inquiry));
+//        });
+//        return result;
     }
 
 
@@ -44,6 +55,8 @@ public class InquiryService {
         } else {
             return null;
         }
+
+
     }
 
 

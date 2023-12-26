@@ -133,6 +133,8 @@
 </style>
 <!-- Header Section Begin -->
 <jsp:include page="../layout/header.jsp"></jsp:include>
+<spring:eval expression="page" var="page" />
+
 <!-- Header End -->
 <!-- Breadcrumb Begin -->
 <div class="breadcrumb-option spad set-bg" data-setbg="/resources/img/headerImg.jpg">
@@ -180,8 +182,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${INQUIRY_LIST}" var="list">
-                        <tr onclick="goDetail(list.inquiryNo)">
+                    <c:forEach var="list" items="${INQUIRY_LIST.content}">
+                        <tr onclick="goDetail(${list.inquiryNo})">
                             <td>${list.inquiryNo}</td>
                             <td>${list.title}</td>
                             <td>${list.name}</td>
@@ -202,15 +204,18 @@
     <div id="wrapper">
         <div class="b-pagination-outer">
             <ul id="border-pagination">
-                <li><a class="" href="#">«</a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#" class="active">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-                <li><a href="#">»</a></li>
+                <li><a class="" href="<c:url value="?page=0" />">«</a></li>
+                <c:forEach var="i" begin="${START_PAGE-1}" end="${END_PAGE - 1}">
+                    <c:choose>
+                        <c:when test="${INQUIRY_LIST.number eq i}">
+                            <li><a href="<c:url value="?page=1" />" class="active">${i + 1}</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="<c:url value="?page=${i}" />">${i + 1}</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+                <li><a href="<c:url value="?page=${INQUIRY_LIST.totalPages-1}" />">»</a></li>
             </ul>
         </div>
 
