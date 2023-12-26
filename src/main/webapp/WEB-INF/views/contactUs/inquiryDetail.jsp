@@ -36,9 +36,9 @@
 
     <!-- Contact Widget Section Begin -->
 
-<section class="spad" style="width: 80%;margin: auto;min-height: 500px;">
+<section class="spad" style="width: 75%;margin: auto;">
 
-    <div class="panel" style="margin-left:1px;">
+    <div class="panel" style="margin-left:1px;min-height: 500px;">
         <div id="contAreaBox">
             <div class="panel">
                 <div class="panel-body">
@@ -72,6 +72,10 @@
                                     <th class="active">제목</th>
                                     <td class="form-inline">${INQUIRY.title}</td>
                                 </tr>
+                                <tr>
+                                    <th class="active">작성일</th>
+                                    <td class="form-inline">${INQUIRY.regDt}</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -79,13 +83,13 @@
                     <div>
                             ${INQUIRY.contents}
                     </div>
-                        <div style="margin-right:50px; float: right">
-                            <a href="/inquiry" class="btn btn-secondary">목록으로</a>
-                        </div>
 
                 </div>
             </div>
         </div>
+    </div>
+    <div style="margin-right:50px; float: right">
+        <a href="/inquiry" class="btn btn-secondary">목록으로</a>
     </div>
 </section>
 <!--    footer start-->
@@ -101,72 +105,4 @@
 <script src="/resources/js/owl.carousel.min.js"></script>
 <script src="/resources/js/main.js"></script>
 <script type="text/javascript">
-    var oEditors = [];
-
-    // 추가 글꼴 목록
-    //var aAdditionalFontSet = [["MS UI Gothic", "MS UI Gothic"], ["Comic Sans MS", "Comic Sans MS"],["TEST","TEST"]];
-
-    nhn.husky.EZCreator.createInIFrame({
-        oAppRef: oEditors,
-        elPlaceHolder: "smartEditor",
-        sSkinURI: "/resources/smartEditor/SmartEditor2Skin.html",
-        htParams : {
-            bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
-            bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
-            bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
-            //bSkipXssFilter : true,		// client-side xss filter 무시 여부 (true:사용하지 않음 / 그외:사용)
-            //aAdditionalFontList : aAdditionalFontSet,		// 추가 글꼴 목록
-            fOnBeforeUnload : function(){
-                //alert("완료!");
-            }
-        }, //boolean
-        fOnAppLoad : function(){
-            //예제 코드
-            //oEditors.getById["smartEditor"].exec("PASTE_HTML", ["로딩이 완료된 후에 본문에 삽입되는 text입니다."]);
-        },
-        fCreator: "createSEditor2"
-    });
-
-    function pasteHTML() {
-        var sHTML = "<span style='color:#FF0000;'>이미지도 같은 방식으로 삽입합니다.<\/span>";
-        oEditors.getById["smartEditor"].exec("PASTE_HTML", [sHTML]);
-    }
-
-    function showHTML() {
-        var sHTML = oEditors.getById["smartEditor"].getIR();
-        alert(sHTML);
-    }
-
-    function submitContents(elClickedObj) {
-        // SmartEditor2의 내용을 textarea에 적용
-        oEditors.getById["smartEditor"].exec("UPDATE_CONTENTS_FIELD", []);
-
-        // textarea에 적용된 내용을 확인
-        var editorContent = document.getElementById("smartEditor").value;
-        console.log(editorContent);
-
-        try {
-            // 폼을 직접 찾아서 제출
-            var form = document.getElementById("form");
-            form.submit();
-        } catch(e) {
-            console.error("Error submitting form:", e);
-        }
-    }
-
-    function setDefaultFont() {
-        var sDefaultFont = '궁서';
-        var nFontSize = 24;
-        oEditors.getById["smartEditor"].setDefaultFont(sDefaultFont, nFontSize);
-    }
-
-
-    $('input[name="showYn"]').change(function() {
-        if ($(this).val() === 'false') {
-            $('#passwordRow').show(); // 비공개 선택 시 비밀번호 입력란 표시
-        } else {
-            $('#passwordRow').hide(); // 공개 선택 시 비밀번호 입력란 숨김
-        }
-    });
-
 </script>

@@ -51,7 +51,7 @@ public class ContactUsController {
 
         // 페이지 블록 끝 페이지
         int endPage = Math.min(startPage + pageBlock - 1, inquiryList.getTotalPages());
-
+        endPage = Math.max(endPage, 1);
 
         model.addAttribute("INQUIRY_LIST", inquiryList);
         model.addAttribute("START_PAGE", startPage);

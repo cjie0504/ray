@@ -11,7 +11,6 @@ import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Getter
@@ -23,17 +22,17 @@ public class AuditingAt implements Serializable {
 
     @CreatedDate
     @Column(name = "REG_DT", insertable = true, updatable = false)
-    @JsonFormat(timezone = "GMT+09:00")
-    protected Timestamp regDt;
+    @JsonFormat(timezone = "GMT+09:00", pattern = "yyyy-MM-dd HH:mm:ss")
+    protected Date regDt;
 
     @LastModifiedDate
     @Column(name = "MOD_DT", insertable = true, updatable = true)
-    @JsonFormat(timezone = "GMT+09:00")
-    protected Timestamp  modDt;
+    @JsonFormat(timezone = "GMT+09:00", pattern = "yyyy-MM-dd HH:mm:ss")
+    protected Date modDt;
 
     public AuditingAt() {
-        regDt = new Timestamp(new Date().getTime());
-        modDt = new Timestamp(new Date().getTime());
+        regDt = new Date(new Date().getTime());
+        modDt = new Date(new Date().getTime());
     }
 
 }

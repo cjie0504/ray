@@ -110,6 +110,10 @@
     #border-pagination li a:hover:not(.active) {
         background: #ddd;
     }
+
+    .list-div:hover {
+        cursor: pointer;
+    }
     /*.myButton {*/
     /*    box-shadow: 0px 0px 0px -7px #276873;*/
     /*    background-color:#599bb3;*/
@@ -169,7 +173,7 @@
 <section class="spad">
     <div class="container">
         <div class="row" style="justify-content: space-around;">
-            <div class="col-xs-12" style="width: 80%;">
+            <div class="col-xs-12" style="width: 75%;">
                 <table summary="This table shows how to create responsive tables using Datatables' extended functionality" class="table table-bordered table-hover dt-responsive">
                     <caption class="text-center">An example of a responsive table based on <a href="https://datatables.net/extensions/responsive/" target="_blank">DataTables</a>:</caption>
                     <thead>
@@ -182,14 +186,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="list" items="${INQUIRY_LIST.content}">
-                        <tr onclick="goDetail(${list.inquiryNo})">
-                            <td>${list.inquiryNo}</td>
-                            <td>${list.title}</td>
-                            <td>${list.name}</td>
-                            <td>${list.regDt}</td>
-                        </tr>
-                    </c:forEach>
+                    <c:if test="${not empty INQUIRY_LIST.content}">
+                        <c:forEach var="list" items="${INQUIRY_LIST.content}">
+                            <tr class="list-div" onclick="goDetail(${list.inquiryNo})">
+                                <td>${list.inquiryNo}</td>
+                                <td>${list.title}</td>
+                                <td>${list.name}</td>
+                                <td>${list.regDt}</td>
+                            </tr>
+                        </c:forEach>
+                    </c:if>
                     </tbody>
                 </table>
             </div>

@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -21,7 +21,7 @@ public class InquiryResDTO {
     private String phone;
     private String company;
     private String token;
-    private Timestamp regDt;
+    private Date regDt;
     private List<InquiryReply> replies;
 
 

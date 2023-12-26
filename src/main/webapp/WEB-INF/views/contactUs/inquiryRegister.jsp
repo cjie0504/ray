@@ -36,7 +36,7 @@
 
     <!-- Contact Widget Section Begin -->
 
-<section class="spad">
+<section class="spad" style="width: 80%;margin: auto;">
 
     <div class="panel" style="margin-left:1px;">
         <div id="contAreaBox">
@@ -66,13 +66,13 @@
                                 </tr>
                                 <tr>
                                     <th class="active" >이메일</th>
-                                    <td class="form-inline"><input type="text" id="email"
+                                    <td class="form-inline"><input type="email" id="email"
                                                                    name="email" class="form-control" style="width: 200px" placeholder="이메일" value="" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th class="active" >핸드폰번호</th>
-                                    <td class="form-inline"><input type="text" id="phone"
+                                    <td class="form-inline"><input type="tel" id="phone"
                                                                    name="phone" class="form-control" style="width: 200px" placeholder="핸드폰 번호" value="" />
                                     </td>
                                 </tr>
@@ -149,7 +149,7 @@
         htParams : {
             bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
             bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
-            bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+            bUseModeChanger : false,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
             //bSkipXssFilter : true,		// client-side xss filter 무시 여부 (true:사용하지 않음 / 그외:사용)
             //aAdditionalFontList : aAdditionalFontSet,		// 추가 글꼴 목록
             fOnBeforeUnload : function(){
@@ -179,16 +179,95 @@
 
         // textarea에 적용된 내용을 확인
         var editorContent = document.getElementById("smartEditor").value;
-        console.log(editorContent);
 
-        try {
-            // 폼을 직접 찾아서 제출
-            var form = document.getElementById("form");
-            form.submit();
-        } catch(e) {
-            console.error("Error submitting form:", e);
+        //유효성 검사
+        if(validateForm()){
+            try {
+                // 폼을 직접 찾아서 제출
+                var form = document.getElementById("form");
+                form.submit();
+            } catch(e) {
+                console.error("Error submitting form:", e);
+            }
         }
     }
+
+    function validateForm() {
+        var name = document.getElementById('board_writer').value;
+        var company = document.getElementById('company').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        var password = document.getElementById('pw').value;
+        var title = document.getElementById('title').value;
+        var content = document.getElementById('smartEditor').value;
+
+        // 이메일 정규식
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+        // 전화번호 정규식 (숫자만 허용하도록)
+        var telRegex = /^[0-9]+$/;
+
+        // 비밀번호는 여러 규칙을 따로 설정하실 수 있습니다.
+        // 여기서는 최소 6자리 이상이어야 한다고 가정합니다.
+
+        // 이름과 제목은 비어있지 않아야 합니다.
+        if (name.trim() === '') {
+            alert('이름을 입력하세요.');
+            name.focus();
+            return false;
+        }
+
+        if (company.trim() === '') {
+            alert('소속을 입력하세요.');
+            company.focus();
+            return false;
+        }
+
+        if (title.trim() === '') {
+            alert('제목을 입력하세요.');
+            title.focus();
+            return false;
+        }
+
+
+        if (content.trim() === '') {
+            alert('내용을 입력하세요.');
+            content.focus();
+            return false;
+        }
+
+        // 이메일 유효성 검사
+        if (!emailRegex.test(email)) {
+            alert('유효한 이메일 주소를 입력하세요.');
+            email.focus();
+            return false;
+        }
+
+        // 전화번호 유효성 검사
+        if (!telRegex.test(phone)) {
+            alert('유효한 전화번호를 입력하세요.');
+            phone.focus();
+            return false;
+        }
+
+        // 비밀번호는 여러 규칙을 따로 설정하실 수 있습니다.
+        // 여기서는 최소 6자리 이상이어야 한다고 가정합니다.
+        if (password.length < 4) {
+            alert('비밀번호는 최소 4자리 이상이어야 합니다.');
+            password.focus();
+            return false;
+        }
+        if (password.length > 20) {
+            alert('비밀번호는 최대 20자리 입니다.');
+            password.focus();
+            return false;
+        }
+
+        // 나머지 유효성 검사 추가 가능
+
+        return true;
+    }
+
 
     function setDefaultFont() {
         var sDefaultFont = '궁서';
