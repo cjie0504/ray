@@ -180,19 +180,19 @@
                     <tr>
                         <th>번호</th>
                         <th>제목</th>
-                        <th>작성자</th>
                         <th>날짜</th>
-<%--                        <th>댓글수</th>--%>
+                        <th>작성자</th>
+                        <%--                        <th>댓글수</th>--%>
                     </tr>
                     </thead>
                     <tbody>
                     <c:if test="${not empty INQUIRY_LIST.content}">
                         <c:forEach var="list" items="${INQUIRY_LIST.content}">
                             <tr class="list-div" onclick="goDetail(${list.inquiryNo})">
-                                <td>${list.inquiryNo}</td>
-                                <td>${list.title}</td>
-                                <td>${list.name}</td>
-                                <td>${list.regDt}</td>
+                                <td style="width: 10%;">${list.inquiryNo}</td>
+                                <td style="width: 50%;">${list.title}</td>
+                                <td style="width: 25%;">${list.regDt}</td>
+                                <td style="width: 15%;">${list.name}</td>
                             </tr>
                         </c:forEach>
                     </c:if>
