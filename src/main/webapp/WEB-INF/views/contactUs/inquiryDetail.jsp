@@ -88,7 +88,7 @@
             </div>
         </div>
     </div>
-    <div style="margin-right:50px; float: right">
+    <div style="margin-right:50px; margin-top:100px;float: right">
         <a href="/inquiry" class="btn btn-secondary">목록으로</a>
     </div>
 </section>

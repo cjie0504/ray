@@ -53,7 +53,7 @@
                                 <tbody>
                                 <tr>
                                     <th class="active" >작성자</th>
-                                    <td class="form-inline">${NEWS.regAdminNo}</td>
+                                    <td class="form-inline">${NEWS.regAdminName}</td>
                                 </tr>
                                 <tr>
                                     <th class="active">제목</th>
@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <div style="margin-right:50px; float: right">
+    <div style="margin-right:50px;margin-top: 100px; float: right">
         <a href="/news" class="btn btn-secondary">목록으로</a>
     </div>
 </section>

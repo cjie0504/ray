@@ -190,7 +190,7 @@
                             <td>${list.newsNo}</td>
                             <td>${list.title}</td>
                             <td>${list.regDt}</td>
-                            <td>${list.regAdminNo}</td>
+                            <td>${list.regAdminName}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

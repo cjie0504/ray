@@ -114,7 +114,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div style="margin-right:50px; float: right">
+                        <div style="margin-right:50px;margin-top: 100px; float: right">
                             <button type="button" class="btn btn-primary" onclick="submitContents(this);" >등록</button>
                             <a href="/inquiry" class="btn btn-danger">취소</a>
                         </div>

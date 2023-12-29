@@ -25,14 +25,14 @@ public class News extends AuditingAt {
     private String title;
     private String contents;
     private Boolean delYn;
-    private String regAdminNo;
+    private String regAdminName;
     private String modAdminNo;
 
     public News(HashMap<String, Object> param){
         this.title = String.valueOf(param.get("title"));
         this.contents = String.valueOf(param.get("smartEditor"));
         this.delYn = Boolean.parseBoolean((String) param.get("delYn"));
-        this.regAdminNo = String.valueOf("1");
+        this.regAdminName = String.valueOf(param.get("regAdminName"));
     }
 
 

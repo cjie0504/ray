@@ -92,17 +92,45 @@
 <script src="/resources/js/owl.carousel.min.js"></script>
 <script src="/resources/js/main.js"></script>
 <script type="text/javascript">
+    var result = '<%= request.getAttribute("RESULT") %>';
+    console.log(">>>>>>"+result);
+    if (result === 'FAIL') {
+    alert("이름 또는 비밀번호를 확인해주세요");
+    }
+
     function submitContents(elClickedObj) {
         try {
-            // 폼을 직접 찾아서 제출
-            var form = document.getElementById("form");
-            form.submit();
+            //빈값체크
+            if(validateForm()){
+                // 폼을 직접 찾아서 제출
+                var form = document.getElementById("form");
+                form.submit();
+            }
         } catch(e) {
             console.error("Error submitting form:", e);
         }
     }
 
-    function setDefaultFont() {
+    function validateForm() {
+        var name = document.getElementById('board_writer').value;
+        var pw = document.getElementById('pw').value;
+
+        if (name.trim() === '') {
+            alert('이름을 입력하세요.');
+            name.focus();
+            return false;
+        }
+
+        if (pw.trim() === '') {
+            alert('비밀번호를 입력하세요.');
+            pw.focus();
+            return false;
+        }
+
+        return true;
+    }
+
+        function setDefaultFont() {
         var sDefaultFont = '궁서';
         var nFontSize = 24;
         oEditors.getById["smartEditor"].setDefaultFont(sDefaultFont, nFontSize);

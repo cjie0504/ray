@@ -19,7 +19,7 @@ public class NewsResDTO {
     private int newsNo;
     private String title;
     private String contents;
-    private String regAdminNo;
+    private String regAdminName;
     private Date regDt;
 
 
@@ -28,7 +28,7 @@ public class NewsResDTO {
                 news.getNewsNo(),
                 news.getTitle(),
                 news.getContents(),
-                news.getRegAdminNo(),
+                news.getRegAdminName(),
                 news.getRegDt()
         );
     }

@@ -116,7 +116,8 @@ public class ContactUsController {
 
             return "redirect:/inquiry/detail/"+inquiry.getInquiryNo();
         }else {
-            return "redirect:/inquiry";
+            attributes.addAttribute("RESULT","FAIL");
+            return "redirect:/inquiry/detail/"+paramMap.get("inquiryNo");
         }
     }
 
@@ -135,6 +136,9 @@ public class ContactUsController {
         if(param.get("TOKEN")!=null
                 && (inquiry.getToken()!=null && inquiry.getToken().equals(param.get("TOKEN")))){
             return "/contactUs/inquiryDetail";
+        }else if(param.get("RESULT")!=null){
+            model.addAttribute("RESULT", param.get("RESULT"));
+            return "/contactUs/inquiryCheckPw";
         }else {
             return "/contactUs/inquiryCheckPw";
         }
