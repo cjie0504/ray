@@ -9,6 +9,7 @@ import com.google.cloud.storage.Bucket;
 import com.google.firebase.cloud.StorageClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -112,7 +113,7 @@ public class ContactUsController {
         InquiryResDTO inquiry = inquiryService.checkWriter(paramMap);
 
         if(inquiry!=null){
-            attributes.addAttribute("TOKEN",inquiry.getToken());
+            attributes.addAttribute("token",inquiry.getToken());
 
             return "redirect:/inquiry/detail/"+inquiry.getInquiryNo();
         }else {
@@ -133,9 +134,11 @@ public class ContactUsController {
         InquiryResDTO inquiry = inquiryService.getOne(inquiryNo);
         model.addAttribute("INQUIRY",inquiry);
 
-        if(param.get("TOKEN")!=null
-                && (inquiry.getToken()!=null && inquiry.getToken().equals(param.get("TOKEN")))){
+        if(param.get("token")!=null
+                && (inquiry.getToken()!=null && inquiry.getToken().equals(param.get("token")))){
+            model.addAttribute("token", param.get("token"));
             return "/contactUs/inquiryDetail";
+
         }else if(param.get("RESULT")!=null){
             model.addAttribute("RESULT", param.get("RESULT"));
             return "/contactUs/inquiryCheckPw";
@@ -152,6 +155,62 @@ public class ContactUsController {
         Blob blob = bucket.create("test", fileContent, "image/jpg")
                 ;
     }
+
+
+
+    /**
+     *
+     * @param paramMap
+     * @return
+     * 댓글등록 api
+     */
+    @RequestMapping(value = "/inquiry/reply", method = RequestMethod.POST)
+    public String reply(@RequestParam HashMap<String, Object> paramMap, RedirectAttributes attributes){
+        try{
+            inquiryService.reply(paramMap);
+
+            if(paramMap.get("token")!=null){
+                attributes.addAttribute("token", paramMap.get("token"));
+            }
+        }catch (Exception e){
+
+        }
+        return "redirect:/inquiry/detail/"+paramMap.get("inquiryNo");
+    }
+
+    /**
+     *
+     * @param replyNo
+     * @return
+     * 댓글삭제 api
+     */
+    @DeleteMapping("/inquiry/delete/reply")
+    public ResponseEntity<?> deleteInquiryReply(@RequestParam int replyNo, @RequestParam int inquiryNo){
+        if(inquiryService.deleteReply(replyNo, inquiryNo)){
+            return ResponseEntity.ok().body(Map.of("success", true));
+        }else {
+            return ResponseEntity.status(500).build();
+        }
+    }
+
+
+    /**
+     *
+     * @param inquiryNo
+     * @return
+     * 게시글 삭제 api
+     */
+    @DeleteMapping("/inquiry/delete/{inquiryNo}")
+    public ResponseEntity<?> deleteInquiry(@PathVariable int inquiryNo){
+        if(inquiryService.deleteInquiry(inquiryNo)){
+            return ResponseEntity.ok().body(Map.of("success", true));
+        }else {
+            return ResponseEntity.status(500).build();
+        }
+    }
+
+
+
     public static String generateRandomFolderName() {
         // 안전한 난수 생성을 위한 SecureRandom 인스턴스
         SecureRandom secureRandom = new SecureRandom();

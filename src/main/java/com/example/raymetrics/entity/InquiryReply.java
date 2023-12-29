@@ -27,13 +27,13 @@ public class InquiryReply extends AuditingAt {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "INQUIRY_NO")
     private Inquiry inquiry;
-    @Transient
+
     private String writer;
 
     public InquiryReply(HashMap<String, Object> param, Inquiry inquiry){
 //        this.inquiryNo = Integer.parseInt((String) param.get("inquiryNo"));
         this.contents = String.valueOf(param.get("contents"));
-        this.regAdminNo = Integer.parseInt(param.get("regAdminNo").toString());
+        this.writer = String.valueOf(param.get("writer"));
         this.inquiry = inquiry;
     }
     public void setWriter(String writer){

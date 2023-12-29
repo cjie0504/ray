@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- Header Section Begin -->
 <jsp:include page="../layout/header.jsp"></jsp:include>
@@ -87,6 +87,46 @@
                 </div>
             </div>
         </div>
+
+        <div style="margin-top: 5em;">
+            <div class="input-group">
+                <input type="text" id="reply" name="reply" cols="100" rows="1" class="form-control" placeholder="댓글을 입력해주세요."></input>
+                <div class="input-group-append">
+                    <button type="button" onclick="submitReply();" class="btn btn-primary">댓글 등록</button>
+                </div>
+            </div>
+
+
+            <c:if test="${not empty INQUIRY.replies}">
+
+                <!-- replyList에 댓글 데이터가 담겨있다고 가정 -->
+                <c:forEach var="inquiryReply" items="${INQUIRY.replies}" varStatus="vs">
+                    <div style="margin-top: 2em; position: relative;">
+                        <b>${inquiryReply.writer}</b> | ${inquiryReply.regDt} <br>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>${inquiryReply.contents}</span>
+                            <c:if test="${inquiryReply.writer eq INQUIRY.name}">
+                                <button type="button" onclick="deleteReply(${inquiryReply.replyNo}, ${INQUIRY.inquiryNo});" class="btn btn-danger btn-sm">삭제</button>
+                            </c:if>
+                        </div>
+                        <hr>
+                    </div>
+                </c:forEach>
+            </c:if>
+        </div>
+
+
+    </div>
+    </div>
+
+    <form id="form" name="form" action="/inquiry/reply" method="post">
+        <input type="hidden" id="writer" name="writer" value="${INQUIRY.name}">
+        <input type="hidden" id="inquiryNo" name="inquiryNo" value="${INQUIRY.inquiryNo}">
+        <input type="hidden" id="contents" name="contents">
+        <input type="hidden" id="token" name="token" value="${token}">
+    </form>
+
+
     </div>
     <div style="margin-right:50px; margin-top:100px;float: right">
         <a href="/inquiry" class="btn btn-secondary">목록으로</a>
@@ -105,4 +145,73 @@
 <script src="/resources/js/owl.carousel.min.js"></script>
 <script src="/resources/js/main.js"></script>
 <script type="text/javascript">
+
+    function submitReply() {
+        try {
+            if($("#reply").val()=="" || !$("#reply").val()){
+                alert("댓글 내용을 입력해주세요.")
+                return;
+            }
+
+            $("#contents").val($("#reply").val());
+            var form = document.getElementById("form");
+            form.submit();
+
+        } catch (e) {}
+    }
+
+    function deleteInquiry(inquiryNo) {
+        if (confirm("게시글을 삭제하시겠습니까?")) {
+            $.ajax({
+                type: "DELETE",
+                url: "/inquiry/delete/" + inquiryNo, // 삭제를 처리하는 서버 엔드포인트 URL
+                success: function(response) {
+                    if (response.success) {
+                        // 삭제 성공 시 처리
+                        alert("게시글이 삭제되었습니다.");
+                        // /inquiry/list 페이지로 이동
+                        window.location.href = "/inquiry/list";
+                    } else {
+                        // 삭제 실패 시 처리
+                        alert("게시글 삭제에 실패했습니다.");
+                    }
+                },
+                error: function() {
+                    // 서버 요청 실패 시 처리
+                    alert("서버 요청에 실패했습니다.");
+                }
+            });
+        }else{
+            return false;
+        }
+    }
+
+    function deleteReply(replyNo, inquiryNo) {
+        if (confirm("댓글을 삭제하시겠습니까?")) {
+            $.ajax({
+                type: "DELETE",
+                url: "/inquiry/delete/reply", // 댓글 삭제를 처리하는 서버 엔드포인트 URL
+                data: { replyNo: replyNo, inquiryNo: inquiryNo },
+                success: function(response) {
+                    if (response.success) {
+                        // 삭제 성공 시 처리
+                        alert("댓글이 삭제되었습니다.");
+                        location.reload();
+                        // 페이지 리로드 또는 댓글을 화면에서 제거하는 등의 처리를 수행할 수 있습니다.
+                    } else {
+                        // 삭제 실패 시 처리
+                        alert("댓글 삭제에 실패했습니다.");
+                    }
+                },
+                error: function() {
+                    // 서버 요청 실패 시 처리
+                    alert("서버 요청에 실패했습니다.");
+                }
+            });
+        }else{
+            return false;
+        }
+    }
+
+
 </script>

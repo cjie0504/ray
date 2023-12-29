@@ -93,7 +93,6 @@
 <script src="/resources/js/main.js"></script>
 <script type="text/javascript">
     var result = '<%= request.getAttribute("RESULT") %>';
-    console.log(">>>>>>"+result);
     if (result === 'FAIL') {
     alert("이름 또는 비밀번호를 확인해주세요");
     }
