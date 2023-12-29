@@ -54,9 +54,6 @@ public class ContactUsController {
         int endPage = Math.min(startPage + pageBlock - 1, inquiryList.getTotalPages());
         endPage = Math.max(endPage, 1);
 
-        for(InquiryResDTO res : inquiryList){
-            System.out.println(">>>>>>>>"+res.getRegDt());
-        }
         model.addAttribute("INQUIRY_LIST", inquiryList);
         model.addAttribute("START_PAGE", startPage);
         model.addAttribute("END_PAGE", endPage);
