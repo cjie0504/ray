@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.util.TimeZone;
 
 @Service
 @Slf4j
@@ -24,6 +25,7 @@ public class FireBaseInitializer {
                 FirebaseApp.initializeApp(options);
                 log.info("Firebase application has been initialized");
             }
+            TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
         }catch (IOException e){
             log.error(e.getMessage());
         }
