@@ -1,0 +1,18 @@
+User-agent: *
+Allow:/
+Allow:/contactUs
+Allow:/inquiry
+Allow:/contactUs
+Allow:/patientTailored
+Allow:/radiationDetector
+Allow:/customPrinted
+Allow:/radiotherapyDosimetry
+Allow:/aiAssisted
+Allow:/plasticScintillator
+Allow:/RAndD
+Allow:/news
+Allow:/organization
+Allow:/history
+Allow:/managementPhilosophy
+Allow:/corportaion
+Allow:/company
